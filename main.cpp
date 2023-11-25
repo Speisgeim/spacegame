@@ -1,12 +1,18 @@
 #include <iostream>
 #include <raylib.h>
+#include "map/map.cpp"
+#include "player/player.cpp"
 
-using namespace std;
 
 int main () {
 
-    const int screenWidth = 800;
-    const int screenHeight = 600;
+    const int screenWidth = 1200;
+    const int screenHeight = 1000;
+
+
+    InitWindow(screenWidth, screenHeight, "Speis");
+    SetTargetFPS(60);
+
 
     Camera2D camera = { 0 };
     camera.target = (Vector2){ 0, 0 };
@@ -16,15 +22,22 @@ int main () {
 
 
 
-    InitWindow(screenWidth, screenHeight, "Speis");
-    SetTargetFPS(60);
+    Map map(1);
+
+
+    Player player(Vector2{0,0});
+
+
 
     while (WindowShouldClose() == false){
         BeginDrawing();
             BeginMode2D(camera);
                 ClearBackground(BLACK);
         
+                map.Update(player.position);
 
+                player.Update();
+                camera.target = player.position;
 
 
             EndMode2D();
