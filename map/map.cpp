@@ -16,7 +16,7 @@ public:
         int numStars = 500; 
 
         // Calculate angle and distance for star positions
-        for (int i = stars.size(); i < maxStars && i < stars.size() + numStars; ++i) {
+        for (int i = stars.size(); i < maxStars && i < static_cast<int>(stars.size()) + numStars; ++i) {
             float angle = GetRandomFloat(0, 2 * PI);
             float distance = GetRandomFloat(0, 2000);
             Vector2 starPos = {0 + distance * cosf(angle), 0 + distance * sinf(angle)};
@@ -32,11 +32,11 @@ public:
         const float maxSpawnRadius = 1000.0f; 
 
         // Generate stars if the current count is less than the maximum
-        if (stars.size() < maxStars) {
+        if (static_cast<int>(stars.size()) < maxStars) {
             int numStars = 10; // Adjust this value based on how many stars you want to spawn
 
             // Calculate angle and distance for star positions
-            for (int i = stars.size(); i < maxStars && i < stars.size() + numStars; ++i) {
+            for (int i = stars.size(); i < maxStars && i < static_cast<int>(stars.size()) + numStars; ++i) {
                 float angle = GetRandomFloat(0, 2 * PI);
                 float distance = GetRandomFloat(maxSpawnRadius, spawnRadius);
                 Vector2 starPos = {playerPos.x + distance * cosf(angle), playerPos.y + distance * sinf(angle)};
