@@ -1,7 +1,7 @@
-#include "raylib.h"
+#include <raylib.h>
 #include "star.cpp"
 #include <vector>
-#include "raymath.h"
+#include <raymath.h>
 
 using namespace std;
 
