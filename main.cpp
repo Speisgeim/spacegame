@@ -1,7 +1,7 @@
 #include <iostream>
 #include <raylib.h>
-#include "map/map.cpp"
-#include "player/player.cpp"
+#include "map.cpp"
+#include "player.cpp"
 
 
 int main () {
