@@ -1,8 +1,8 @@
 #include <iostream>
 #include <raylib.h>
 #include "map.cpp"
-#include "player.cpp"
-
+#include "player.h"
+#include <string>
 
 int main () {
 
@@ -11,7 +11,7 @@ int main () {
 
 
     InitWindow(screenWidth, screenHeight, "Speis");
-    SetTargetFPS(60);
+    SetTargetFPS(155);
 
 
     Camera2D camera = { 0 };
@@ -25,7 +25,7 @@ int main () {
     Map map(1);
 
 
-    Player player(Vector2{0,0});
+    Player player((Vector2){0,0});
 
 
 
@@ -40,7 +40,13 @@ int main () {
                 camera.target = player.position;
 
 
+
+
             EndMode2D();
+
+            std::string myString = std::to_string(GetFPS());
+            const char *myCString = myString.c_str();
+            DrawText(myCString, 10,10,10,GREEN);
         EndDrawing();
     }
 

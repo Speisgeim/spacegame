@@ -12,7 +12,7 @@ public:
     }
 
     void Draw(){
-        DrawCircle(position.x, position.y, size, WHITE);
+        DrawRectangleV(position, Vector2{(float)size,(float)size}, WHITE);
     }
 
 private:
