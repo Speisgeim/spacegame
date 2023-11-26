@@ -1,6 +1,6 @@
 #include <iostream>
 #include <raylib.h>
-#include "map.cpp"
+#include "map.h"
 #include "player.h"
 #include <string>
 
